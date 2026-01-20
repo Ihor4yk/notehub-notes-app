@@ -1,36 +1,79 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# NoteHub
 
-## Getting Started
+**NoteHub** is a personal web application for managing notes, built with **Next.js**, **React**, and **TypeScript**.
 
-First, run the development server:
+The app allows users to authenticate, create and organize notes using tags, search through notes, and navigate large lists with pagination.
 
+📌 Project Purpose
+
+This project was created as a personal portfolio application to demonstrate modern frontend development skills, including working with Next.js, state management, form validation, and API integration.
+
+---
+
+## 🚀 Features
+
+- User authentication
+- Create, edit, and delete notes
+- Tag-based note organization
+- Search functionality
+- Pagination for notes list
+- Client-side state management
+- Form validation
+
+---
+
+## 🛠 Tech Stack
+
+- **Next.js 15**
+- **React 19**
+- **TypeScript**
+- **TanStack React Query**
+- **Zustand**
+- **Formik + Yup**
+- **Axios**
+- **React Paginate**
+
+---
+
+## 📦 Installation
+
+1. Clone the repository:
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+git clone https://github.com/Ihor4yk/notehub-notes-app.git
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Navigate to the project directory:
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+2. cd notehub-notes-app
+Install dependencies:
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```bash
+npm install
+```
+   
+▶️ Running the Project
 
-## Learn More
+Start the development server:
+```bash
+npm run dev
+```
 
-To learn more about Next.js, take a look at the following resources:
+Build the project:
+```bash
+npm run build
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Run the production build:
+```bash
+npm start
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+📁 Scripts
 
-## Deploy on Vercel
+dev — runs the app in development mode
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+build — builds the production version
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+start — starts the production server
+
+lint — runs ESLint
