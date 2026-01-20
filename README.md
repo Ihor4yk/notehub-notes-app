@@ -46,9 +46,11 @@ Navigate to the project directory:
 
 2. cd notehub-notes-app
 Install dependencies:
+
    ```bash
    npm install
    ```
+   
 ▶️ Running the Project
 
 Start the development server:
