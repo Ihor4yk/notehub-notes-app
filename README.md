@@ -4,6 +4,10 @@
 
 The app allows users to authenticate, create and organize notes using tags, search through notes, and navigate large lists with pagination.
 
+📌 Project Purpose
+
+This project was created as a personal portfolio application to demonstrate modern frontend development skills, including working with Next.js, state management, form validation, and API integration.
+
 ---
 
 ## 🚀 Features
@@ -42,25 +46,26 @@ Navigate to the project directory:
 
 2. cd notehub-notes-app
 Install dependencies:
-```bash
-npm install
-```
+   ```bash
+   npm install
+   ```
 ▶️ Running the Project
 
 Start the development server:
-```bash
-npm run dev
-```
+   ```bash
+   npm run dev
+   ```
 
 Build the project:
-```bash
-npm run build
-```
+   ```bash
+   npm run build
+   ```
 
 Run the production build:
-```bash
-npm start
-```
+   ```bash
+   npm start
+   ```
+
 📁 Scripts
 
 dev — runs the app in development mode
@@ -70,12 +75,3 @@ build — builds the production version
 start — starts the production server
 
 lint — runs ESLint
-
-📌 Project Purpose
-
-This project was created as a personal portfolio application to demonstrate modern frontend development skills, including working with Next.js, state management, form validation, and API integration.
-
-👤 Author
-
-Ihor
-Frontend Developer
