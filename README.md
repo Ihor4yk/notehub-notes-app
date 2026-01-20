@@ -38,35 +38,35 @@ This project was created as a personal portfolio application to demonstrate mode
 ## 📦 Installation
 
 1. Clone the repository:
-   ```bash
-   git clone https://github.com/Ihor4yk/notehub-notes-app.git
-   ```
+```bash
+git clone https://github.com/Ihor4yk/notehub-notes-app.git
+```
 
 Navigate to the project directory:
 
 2. cd notehub-notes-app
 Install dependencies:
 
-   ```bash
-   npm install
-   ```
+```bash
+npm install
+```
    
 ▶️ Running the Project
 
 Start the development server:
-   ```bash
-   npm run dev
-   ```
+```bash
+npm run dev
+```
 
 Build the project:
-   ```bash
-   npm run build
-   ```
+```bash
+npm run build
+```
 
 Run the production build:
-   ```bash
-   npm start
-   ```
+```bash
+npm start
+```
 
 📁 Scripts
 
