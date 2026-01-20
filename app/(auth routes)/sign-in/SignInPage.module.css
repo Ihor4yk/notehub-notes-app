@@ -1,0 +1,113 @@
+.mainContent {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(135deg, #1e1e2f, #2a2a44);
+  padding: 2rem;
+}
+
+/* Форма входу */
+.form {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  padding: 2.5rem 2.5rem 2rem;
+  width: 100%;
+  max-width: 380px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
+  color: #f5f5f5;
+  animation: fadeIn 0.4s ease-in-out;
+}
+
+.formTitle {
+  font-size: 2rem;
+  text-align: center;
+  margin-bottom: 1.5rem;
+  font-weight: 600;
+  color: #ffcc33;
+}
+
+.formGroup {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1.2rem;
+}
+
+.formGroup label {
+  font-size: 0.95rem;
+  margin-bottom: 0.4rem;
+  color: #ccc;
+}
+
+.input {
+  padding: 0.6rem 0.8rem;
+  border-radius: 6px;
+  border: 1px solid #3a3a5e;
+  background: rgba(255, 255, 255, 0.1);
+  color: #fff;
+  font-size: 1rem;
+  transition: border 0.3s ease, background 0.3s ease;
+}
+
+.input:focus {
+  outline: none;
+  border-color: #ffcc33;
+  background: rgba(255, 255, 255, 0.15);
+}
+
+.actions {
+  display: flex;
+  justify-content: center;
+  margin-top: 1.5rem;
+}
+
+.submitButton {
+  background: linear-gradient(135deg, #ffcc33, #ffb733);
+  color: #1c1c2b;
+  border: none;
+  padding: 0.7rem 2.5rem;
+  border-radius: 6px;
+  font-weight: 600;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(255, 204, 51, 0.3);
+}
+
+.submitButton:hover {
+  background: linear-gradient(135deg, #ffd84d, #ffc933);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(255, 204, 51, 0.4);
+}
+
+.error {
+  color: #ff6666;
+  text-align: center;
+  margin-top: 1rem;
+  min-height: 1.5rem;
+  font-size: 0.9rem;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 480px) {
+  .form {
+    padding: 2rem 1.5rem;
+  }
+
+  .formTitle {
+    font-size: 1.75rem;
+  }
+}

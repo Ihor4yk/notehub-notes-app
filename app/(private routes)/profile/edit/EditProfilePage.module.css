@@ -1,0 +1,138 @@
+.mainContent {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: calc(100vh - 100px);
+  background-color: #f9fafb;
+  padding: 2rem;
+}
+
+.profileCard {
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  padding: 2.5rem;
+  max-width: 420px;
+  width: 100%;
+  text-align: center;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.profileCard:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 6px 25px rgba(0, 0, 0, 0.1);
+}
+
+.formTitle {
+  font-size: 1.8rem;
+  font-weight: 600;
+  color: #111827;
+  margin-bottom: 1.5rem;
+}
+
+.avatar {
+  border-radius: 50%;
+  border: 3px solid #2563eb;
+  margin-bottom: 1.5rem;
+  transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.avatar:hover {
+  transform: scale(1.05);
+  border-color: #1e40af;
+}
+
+.profileInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  text-align: left;
+}
+
+.usernameWrapper,
+.emailWrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.label {
+  font-weight: 500;
+  color: #374151;
+  font-size: 0.95rem;
+}
+
+.input {
+  padding: 0.6rem 0.8rem;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  font-size: 1rem;
+  color: #111827;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.input:focus {
+  outline: none;
+  border-color: #2563eb;
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.2);
+}
+
+.input[readonly] {
+  background-color: #f3f4f6;
+  cursor: not-allowed;
+}
+
+.actions {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 1.5rem;
+  gap: 1rem;
+}
+
+.saveButton,
+.cancelButton {
+  flex: 1;
+  padding: 0.6rem 1rem;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 500;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.saveButton {
+  background-color: #2563eb;
+  color: #fff;
+}
+
+.saveButton:hover {
+  background-color: #1e40af;
+  transform: translateY(-2px);
+}
+
+.cancelButton {
+  background-color: #e5e7eb;
+  color: #111827;
+}
+
+.cancelButton:hover {
+  background-color: #d1d5db;
+  transform: translateY(-2px);
+}
+
+@media (max-width: 480px) {
+  .profileCard {
+    padding: 1.8rem;
+  }
+
+  .formTitle {
+    font-size: 1.5rem;
+  }
+
+  .saveButton,
+  .cancelButton {
+    font-size: 0.9rem;
+    padding: 0.5rem 0.8rem;
+  }
+}

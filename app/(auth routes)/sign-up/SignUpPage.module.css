@@ -1,0 +1,113 @@
+.mainContent {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(135deg, #1c1c2a, #2a2a45);
+  padding: 2rem;
+  color: #f5f5f5;
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+.formTitle {
+  font-size: 2.2rem;
+  font-weight: 600;
+  margin-bottom: 1.8rem;
+  color: #b48cff;
+  text-align: center;
+}
+
+.form {
+  background: rgba(255, 255, 255, 0.06);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 12px;
+  padding: 2.5rem 2.5rem 2rem;
+  width: 100%;
+  max-width: 400px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
+}
+
+.formGroup {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1.2rem;
+}
+
+.formGroup label {
+  font-size: 0.95rem;
+  margin-bottom: 0.4rem;
+  color: #ccc;
+}
+
+.input {
+  padding: 0.6rem 0.8rem;
+  border-radius: 6px;
+  border: 1px solid #3a3a5e;
+  background: rgba(255, 255, 255, 0.1);
+  color: #fff;
+  font-size: 1rem;
+  transition: border 0.3s ease, background 0.3s ease;
+}
+
+.input:focus {
+  outline: none;
+  border-color: #b48cff;
+  background: rgba(255, 255, 255, 0.15);
+}
+
+.actions {
+  display: flex;
+  justify-content: center;
+  margin-top: 1.5rem;
+}
+
+.submitButton {
+  background: linear-gradient(135deg, #b48cff, #8e65ff);
+  color: #fff;
+  border: none;
+  padding: 0.7rem 2.5rem;
+  border-radius: 6px;
+  font-weight: 600;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(180, 140, 255, 0.25);
+}
+
+.submitButton:hover {
+  background: linear-gradient(135deg, #c19bff, #9c74ff);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(180, 140, 255, 0.4);
+}
+
+.error {
+  color: #ff6666;
+  text-align: center;
+  margin-top: 1rem;
+  min-height: 1.5rem;
+  font-size: 0.9rem;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 480px) {
+  .form {
+    padding: 2rem 1.5rem;
+  }
+
+  .formTitle {
+    font-size: 1.8rem;
+  }
+}

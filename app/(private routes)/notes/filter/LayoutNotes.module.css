@@ -1,0 +1,28 @@
+.notesWrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  min-height: calc(100vh - 80px);
+  background-color: #f9fafb;
+  padding: 2rem 1rem;
+  gap: 2rem;
+}
+
+.sidebar {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0.5rem 0;
+  background: transparent;
+}
+
+.container {
+  width: 100%;
+  max-width: 1000px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+  padding: 0.5rem;
+}

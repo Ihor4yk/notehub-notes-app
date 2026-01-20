@@ -1,0 +1,92 @@
+.container {
+  position: relative;
+  background-color: #fff;
+  padding: 32px 28px;
+  border-radius: 8px;
+  max-width: 600px;
+  width: 100%;
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.15);
+  border: 1px solid #dee2e6;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  animation: fadeIn 0.25s ease;
+}
+
+/* Кнопка закриття */
+.backBtn {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  background: transparent;
+  border: none;
+  font-size: 1.2rem;
+  color: #6c757d;
+  cursor: pointer;
+  transition: color 0.2s ease, transform 0.15s ease;
+}
+
+.backBtn:hover {
+  color: #0d6efd;
+  transform: scale(1.1);
+}
+
+.title {
+  font-size: 1.6rem;
+  font-weight: 600;
+  color: #212529;
+  margin-bottom: 10px;
+  text-align: left;
+  word-break: break-word;
+}
+
+.tag {
+  background-color: #e9ecef;
+  color: #495057;
+  padding: 4px 10px;
+  border-radius: 4px;
+  font-size: 0.85rem;
+  font-weight: 500;
+  margin-bottom: 12px;
+}
+
+.content {
+  font-size: 1rem;
+  color: #212529;
+  line-height: 1.6;
+  margin-bottom: 20px;
+  white-space: pre-wrap;
+  word-break: break-word;
+}
+
+.date {
+  align-self: flex-end;
+  font-size: 0.85rem;
+  color: #6c757d;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-4px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 600px) {
+  .container {
+    padding: 20px;
+  }
+
+  .title {
+    font-size: 1.3rem;
+  }
+
+  .content {
+    font-size: 0.95rem;
+  }
+}
