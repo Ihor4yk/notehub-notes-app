@@ -25,7 +25,7 @@ export default function AuthProvider({ children }: AuthProviderProps) {
           clearIsAuthenticated();
         }
       } catch (err) {
-        console.error("Auth check failed:", err);
+        console.warn("Session check failed (cold start)");
         clearIsAuthenticated();
       } finally {
         setLoading(false);
@@ -36,7 +36,21 @@ export default function AuthProvider({ children }: AuthProviderProps) {
   }, [setUser, clearIsAuthenticated]);
 
   if (loading) {
-    return "Checking session...";
+    return (
+      <div className="auth-loader">
+        <span>Checking session...</span>
+      </div>
+    );
   }
+
+  /* При потребі можна зробити спінер */
+  // if (loading) {
+  //   return (
+  //     <div className="auth-loader">
+  //       <div className="spinner" />
+  //     </div>
+  //   );
+  // }
+
   return children;
 }
