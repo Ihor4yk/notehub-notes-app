@@ -1,6 +1,5 @@
 import { User } from "@/types/user";
 import { cookies } from "next/headers";
-// import { nextServerApi } from "./api";
 import { Note, NoteTag } from "@/types/note";
 import { FetchNotesResponse } from "./clientApi";
 
@@ -35,31 +34,6 @@ export const fetchNotes = async (
   return res.json();
 };
 
-// export const fetchNotes = async (
-//   searchValue?: string,
-//   page?: number,
-//   perPage?: number,
-//   tag?: NoteTag,
-//   sortBy?: string,
-// ): Promise<FetchNotesResponse> => {
-//   const cookieStore = await cookies();
-
-//   const response = await nextServerApi.get<FetchNotesResponse>("/notes", {
-//     params: {
-//       search: searchValue,
-//       page,
-//       perPage,
-//       tag,
-//       sortBy,
-//     },
-//     headers: {
-//       Cookie: cookieStore.toString(),
-//     },
-//   });
-
-//   return response.data;
-// };
-
 export const fetchNoteById = async (id: string): Promise<Note> => {
   const cookieStore = await cookies();
 
@@ -76,18 +50,6 @@ export const fetchNoteById = async (id: string): Promise<Note> => {
 
   return res.json();
 };
-
-// export const fetchNoteById = async (id: string): Promise<Note> => {
-//   const cookieStore = await cookies();
-
-//   const response = await nextServerApi.get<Note>(`/notes/${id}`, {
-//     headers: {
-//       Cookie: cookieStore.toString(),
-//     },
-//   });
-
-//   return response.data;
-// };
 
 export const getMe = async (): Promise<User> => {
   const cookieStore = await cookies();
@@ -106,18 +68,6 @@ export const getMe = async (): Promise<User> => {
   return res.json();
 };
 
-// export const getMe = async (): Promise<User> => {
-//   const cookieStore = await cookies();
-
-//   const { data } = await nextServerApi.get("/users/me", {
-//     headers: {
-//       Cookie: cookieStore.toString(),
-//     },
-//   });
-
-//   return data;
-// };
-
 export const checkSession = async (): Promise<boolean> => {
   const cookieStore = await cookies();
 
@@ -130,15 +80,3 @@ export const checkSession = async (): Promise<boolean> => {
 
   return res.ok;
 };
-
-// export const checkSession = async (): Promise<AxiosResponse> => {
-//   const cookieStore = await cookies();
-
-//   const response = await nextServerApi.get("/auth/session", {
-//     headers: {
-//       Cookie: cookieStore.toString(),
-//     },
-//   });
-
-//   return response;
-// };

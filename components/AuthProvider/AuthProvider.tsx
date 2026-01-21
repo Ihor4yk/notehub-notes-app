@@ -24,7 +24,7 @@ export default function AuthProvider({ children }: AuthProviderProps) {
         } else {
           clearIsAuthenticated();
         }
-      } catch (err) {
+      } catch {
         console.warn("Session check failed (cold start)");
         clearIsAuthenticated();
       } finally {
