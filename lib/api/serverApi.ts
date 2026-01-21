@@ -45,14 +45,31 @@ export const fetchNoteById = async (id: string): Promise<Note> => {
 export const getMe = async (): Promise<User> => {
   const cookieStore = await cookies();
 
-  const { data } = await nextServerApi.get("/users/me", {
+  const res = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/api/users/me`, {
     headers: {
       Cookie: cookieStore.toString(),
     },
+    cache: "no-store",
   });
 
-  return data;
+  if (!res.ok) {
+    throw new Error("Failed to fetch user");
+  }
+
+  return res.json();
 };
+
+// export const getMe = async (): Promise<User> => {
+//   const cookieStore = await cookies();
+
+//   const { data } = await nextServerApi.get("/users/me", {
+//     headers: {
+//       Cookie: cookieStore.toString(),
+//     },
+//   });
+
+//   return data;
+// };
 
 export const checkSession = async (): Promise<AxiosResponse> => {
   const cookieStore = await cookies();
