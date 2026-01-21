@@ -1,9 +1,8 @@
 import { User } from "@/types/user";
 import { cookies } from "next/headers";
-import { nextServerApi } from "./api";
+// import { nextServerApi } from "./api";
 import { Note, NoteTag } from "@/types/note";
 import { FetchNotesResponse } from "./clientApi";
-import { AxiosResponse } from "axios";
 
 export const fetchNotes = async (
   searchValue?: string,
