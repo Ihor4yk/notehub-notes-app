@@ -1,17 +1,15 @@
 import { User } from "@/types/user";
-import { cookies } from "next/headers";
 import { Note, NoteTag } from "@/types/note";
 import { FetchNotesResponse } from "./clientApi";
+import { serverFetch } from "./serverFetch";
 
-export const fetchNotes = async (
+export const fetchNotes = (
   searchValue?: string,
   page?: number,
   perPage?: number,
   tag?: NoteTag,
   sortBy?: string,
 ): Promise<FetchNotesResponse> => {
-  const cookieStore = await cookies();
-
   const params = new URLSearchParams({
     ...(searchValue && { search: searchValue }),
     ...(page && { page: page.toString() }),
@@ -20,63 +18,24 @@ export const fetchNotes = async (
     ...(sortBy && { sortBy }),
   });
 
-  const res = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/api/notes?${params.toString()}`, {
-    headers: {
-      Cookie: cookieStore.toString(),
-    },
-    cache: "no-store",
-  });
-
-  if (!res.ok) {
-    throw new Error("Failed to fetch notes");
-  }
-
-  return res.json();
+  return serverFetch<FetchNotesResponse>(`/api/notes?${params}`);
 };
 
-export const fetchNoteById = async (id: string): Promise<Note> => {
-  const cookieStore = await cookies();
-
-  const res = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/api/notes/${id}`, {
-    headers: {
-      Cookie: cookieStore.toString(),
-    },
-    cache: "no-store",
-  });
-
-  if (!res.ok) {
-    throw new Error("Failed to fetch note");
-  }
-
-  return res.json();
+export const fetchNoteById = (id: string): Promise<Note> => {
+  return serverFetch<Note>(`/api/notes/${id}`);
 };
 
-export const getMe = async (): Promise<User> => {
-  const cookieStore = await cookies();
-
-  const res = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/api/users/me`, {
-    headers: {
-      Cookie: cookieStore.toString(),
-    },
-    cache: "no-store",
-  });
-
-  if (!res.ok) {
-    throw new Error("Failed to fetch user");
-  }
-
-  return res.json();
+export const getMe = (): Promise<User> => {
+  return serverFetch<User>(`/api/users/me`);
 };
 
 export const checkSession = async (): Promise<boolean> => {
-  const cookieStore = await cookies();
-
-  const res = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/api/auth/session`, {
-    headers: {
-      Cookie: cookieStore.toString(),
-    },
-    cache: "no-store",
-  });
-
-  return res.ok;
+  try {
+    await serverFetch("/api/auth/session", {
+      redirectOn401: false,
+    });
+    return true;
+  } catch {
+    return false;
+  }
 };
